@@ -23,5 +23,13 @@
 #include "Graph.h"
 
 int main() {
+    Graph<ListGraphs> grap;
+
+    if (!grap.ReadFile("/home/rskullw/CLionProjects/SIOD/matrix.txt") ){
+        return 1;
+    }
+
+    grap.PrintGraph();
+
     return 0;
 }

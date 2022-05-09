@@ -6,16 +6,29 @@
 template <class Container = MatrixGraphs> class Graph {
 
 public:
-    explicit Graph() = default;
-    virtual ~Graph() = 0;
+    Graph() {
+        container = new Container;
+    };
 
-    bool ReadFile(std::string filename) {
-        return container.ReadFile(filename);
+    void PrintGraph() {
+        container->PrintGraph();
     }
+    bool ReadFile(std::string filename) {
+        return container->ReadFile(filename);
+    }
+
     bool AlgorithmGraphs() {
-        return container.AlgorithmGraphs();
+        return container->AlgorithmGraphs();
+    }
+
+    template<typename T> void Log(T userText) {
+        container->Log(userText);
+    }
+
+    ~Graph() {
+        delete container;
     }
 
 private:
-    Container container;
+    Container* container;
 };
