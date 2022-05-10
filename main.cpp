@@ -23,13 +23,30 @@
 #include "Graph.h"
 
 int main() {
-    Graph<ListGraphs> grap;
+    Graph graphMatrix;
+    Graph<ListGraphs> graphList;
 
-    if (!grap.ReadFile("/home/rskullw/CLionProjects/SIOD/matrix.txt") ){
-        return 1;
+    try {
+        // Graph Matrix
+        graphMatrix.ReadFile("/home/rskullw/CLionProjects/SIOD/matrix.txt");
+        graphMatrix.Log("Print Matrix");
+
+        graphMatrix.PrintGraph();
+
+        graphMatrix.Log("Answer Matrix = " + std::to_string(graphMatrix.PriceDijkstra()));
+
+        //Graph List
+        graphList.ReadFile("/home/rskullw/CLionProjects/SIOD/matrix.txt");
+//      graphList.Log("Print List");
+//
+//      graphList.PrintGraph();
+
+        graphList.Log("Answer List = " + std::to_string(graphList.PriceDijkstra()));
     }
 
-    grap.PrintGraph();
+    catch(std::string& ex) {
+        std::cout << ex << '\n';
+    }
 
     return 0;
 }

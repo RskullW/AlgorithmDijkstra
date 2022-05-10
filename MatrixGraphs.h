@@ -9,11 +9,15 @@ public:
     MatrixGraphs();
     ~MatrixGraphs();
 
-    void PrintGraph();
+    uint32_t Dijkstra(int src);
+    uint32_t PriceDijkstra();
 
-    bool ReadFile(std::string filename);
-    bool AlgorithmGraphs();
+    void PrintGraph();
+    void ReadFile(std::string filename);
+    bool AlgorithmGraphs(const unsigned short startPosition);
 
 private:
-    unsigned int** graph;
+    int MinDist(unsigned int* dist, bool*Tset);
+private:
+    unsigned int** adjMatrix;
 };

@@ -13,12 +13,21 @@ public:
     void PrintGraph() {
         container->PrintGraph();
     }
-    bool ReadFile(std::string filename) {
-        return container->ReadFile(filename);
+
+    void ReadFile(std::string filename) {
+        container->ReadFile(filename);
     }
 
-    bool AlgorithmGraphs() {
-        return container->AlgorithmGraphs();
+    uint32_t Dijkstra(int src) {
+        return container->Dijkstra(src);
+    }
+
+    uint32_t PriceDijkstra() {
+        return container->PriceDijkstra();
+    }
+
+    bool AlgorithmGraphs(const unsigned short startPosition) {
+        return container->AlgorithmGraphs(startPosition);
     }
 
     template<typename T> void Log(T userText) {

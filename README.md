@@ -1,2 +1,2 @@
 # AlgorithmDijkstra
-The beginning of the implementation of the Dijkstra algorithm
+The implementation of Dijkstra's Algorithm via the adjacency list is under development.
